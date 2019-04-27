@@ -2,7 +2,7 @@ class ArticlesController < ApplicationController
 
 
   def index
-    @articles = Article.all
+    @articles = Article.order(:id).page(params[:page]).per(5)
   end
 
   def destroy
